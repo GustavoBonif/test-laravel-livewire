@@ -12,12 +12,22 @@
         <button>Add a New Bird Count</button>
     </form>
 
-    @foreach ($entries as $entry)
+    @if ($errors->any())
         <div>
-            {{ $entry->bird_count }}
+            @foreach ($errors->all() as $error)
+                <div>{{ $error }}</div>
+            @endforeach
         </div>
-        <div>
-            {{ $entry->notes }}
-        </div>
-    @endforeach
+    @endif
+
+    <div>
+        @foreach ($entries as $entry)
+            <div>
+                {{ $entry->bird_count }}
+            </div>
+            <div>
+                {{ $entry->notes }}
+            </div>
+        @endforeach
+    </div>
 </div>

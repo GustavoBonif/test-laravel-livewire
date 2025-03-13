@@ -3,14 +3,20 @@
 namespace App\Livewire;
 
 use App\Models\Entry;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class BirdForm extends Component
 {
+    #[Validate('required|integer')]
     public int $bird_count;
+
+    #[Validate('required|string')]
     public string $notes;
 
     public function submit() {
+
+        $this->validate();
 
         // used when the class attributes are the same as the model.
         // the '->pull()' property says that you are pulling the data from the origin
