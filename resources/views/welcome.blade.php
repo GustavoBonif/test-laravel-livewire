@@ -7,6 +7,6 @@
     <title>Test Livewire</title>
 </head>
 <body>
-    <livewire:bird-form />
+    <livewire:bird-form :birdCount=3 />
 </body>
 </html>
